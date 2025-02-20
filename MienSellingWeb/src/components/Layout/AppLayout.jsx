@@ -1,0 +1,92 @@
+import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import './AppLayout.css';
+import { Button } from 'antd';
+import { SearchOutlined, ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
+import payment1Img from '../../img/payment_1_img.png';
+import payment2Img from '../../img/payment_2_img.png';
+import shipment1Img from '../../img/shipment_1_img.png';
+import shipment2Img from '../../img/shipment_2_img.png';
+const Layout = () => {
+  return (
+    <div className="layout">
+      <header className="main-header">
+        <div className="logo">
+          <Link to="/home">
+            <img src="/path-to-logo.svg" alt="Mien" />
+          </Link>
+        </div>
+        
+        <nav className="main-nav">
+          <ul>
+            <li><Link to="/home">Trang chủ</Link></li>
+            <li><Link to="/product">Sản Phẩm</Link></li>
+            <li><Link to="/contact">Liên hệ</Link></li>
+          </ul>
+        </nav>
+        
+        <div className="header-actions">
+          <Link to="/search"><Button shape="circle" icon={<SearchOutlined />}></Button></Link>
+          <Link to="/account" className="account-button"><Button icon={<UserOutlined />}/></Link>
+          <Link to="/cart" className="cart-button"><Button icon={<ShoppingCartOutlined/>}></Button></Link>
+        </div>
+      </header>
+
+      <main className="main-content">
+        <Outlet />
+      </main>
+
+      <footer className="main-footer">
+        <div className="footer-content">
+          <div className="footer-brand">
+            <Link to="/home">
+              <img src="/path-to-logo.svg" alt="Mien" className="footer-logo" />
+            </Link>
+            <h3 className="footer-title">
+              Một sản phẩm sạch được làm ra cho tất cả mọi người
+            </h3>
+            <p className="footer-description">
+            Giữa bạt ngàn núi non Tây Bắc, Mường Phăng là mảnh đất màu mỡ với khí hậu trong lành, nơi cả dòng phát triển tự nhiên, không chịu tác động từ hóa chất hay can thiệp công nghiệp. Cây dong Mường Phăng mọc lên từ những vùng đất sạch và được nuôi dưỡng từ nguồn nước mát lành của núi rừng. Bởi vậy, mỗi sợi miến dong Mường Phăng không chỉ là một thực phẩm mà còn là một món quà từ thiên nhiên, chứa đựng tinh hoa đất trời, hoàn toàn phù hợp cho những ai hướng tới lối sống lành mạnh và chế độ ăn sạch
+            </p>
+          </div>
+
+          <div className="footer-social">
+            <a href="/" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
+            <a href="/" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+            <a href="/" aria-label="YouTube"><i className="fab fa-youtube"></i></a>
+            <a href="/" aria-label="TikTok"><i className="fab fa-tiktok"></i></a>
+            <a href="/" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+          </div>
+
+          <div className="footer-links">
+            <Link to="/sales-policy">Chính sách bán hàng</Link>
+            <Link to="/return-policy">Chính sách đổi trả</Link>
+            <Link to="/privacy-policy">Chính sách bảo mật</Link>
+            <Link to="/terms">Điều khoản dịch vụ</Link>
+          </div>
+
+          <div className="footer-payment">
+            <h4>Phương thức thanh toán</h4>
+            <div className="payment-methods">
+            <img src={payment1Img} alt="ZaloPay" />
+            <img  src={payment2Img} alt="VNPay" />
+              
+            </div>
+          </div>
+
+          <div className="footer-shipping">
+            <h4>Phương thức vận chuyển</h4>
+            <div className="shipping-methods">
+              <img src={shipment1Img} alt="GHN" />
+              <img src={shipment2Img} alt="J&T" />
+            </div>
+          </div>
+
+          
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Layout;
