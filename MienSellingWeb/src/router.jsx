@@ -40,7 +40,7 @@ const router = createBrowserRouter([
           element: <Checkout />
         }
       ],
-    },
+    }, {basename: '/'}
    
   ]);
   export {router};

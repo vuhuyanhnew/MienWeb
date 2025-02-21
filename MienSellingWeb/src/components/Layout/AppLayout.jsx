@@ -8,6 +8,14 @@ import payment2Img from '../../img/payment_2_img.png';
 import shipment1Img from '../../img/shipment_1_img.png';
 import shipment2Img from '../../img/shipment_2_img.png';
 import logo from '../../img/test_logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faFacebook, 
+  faInstagram, 
+  faYoutube, 
+  faTiktok, 
+  faTwitter 
+} from '@fortawesome/free-brands-svg-icons';
 const Layout = () => {
   return (
     <div className="layout">
@@ -52,13 +60,22 @@ const Layout = () => {
           </div>
 
           <div className="footer-social">
-            <a href="/" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
-            <a href="/" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-            <a href="/" aria-label="YouTube"><i className="fab fa-youtube"></i></a>
-            <a href="/" aria-label="TikTok"><i className="fab fa-tiktok"></i></a>
-            <a href="/" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+          <a href="/" aria-label="Facebook">
+          <FontAwesomeIcon icon={faFacebook} />
+          </a>
+          <a href="/" aria-label="Instagram">
+          <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a href="/" aria-label="YouTube">
+          <FontAwesomeIcon icon={faYoutube} />
+          </a>
+          <a href="/" aria-label="TikTok">
+          <FontAwesomeIcon icon={faTiktok} />
+          </a>
+          <a href="/" aria-label="Twitter">
+          <FontAwesomeIcon icon={faTwitter} />
+          </a>
           </div>
-
           {/* <div className="footer-links">
             <Link to="/sales-policy">Chính sách bán hàng</Link>
             <Link to="/return-policy">Chính sách đổi trả</Link>
