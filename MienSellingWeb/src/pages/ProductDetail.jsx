@@ -83,7 +83,7 @@ function ProductDetail() {
 
           <div className="product-meta">
             <div className="categories">
-              Categories: <a href="/groceries">Groceries</a>, <a href="/juice">Food</a>
+              Categories:<div>Food</div>
             </div>
           </div>
         </div>
