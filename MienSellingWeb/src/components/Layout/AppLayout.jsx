@@ -27,8 +27,8 @@ const Layout = () => {
         </nav>
         
         <div className="header-actions">
-          <Link to="/search"><Button shape="circle" icon={<SearchOutlined />}></Button></Link>
-          <Link to="/account" className="account-button"><Button icon={<UserOutlined />}/></Link>
+          <Link to="/search"><Button shape="circle" icon={<SearchOutlined />} style={{display:'none'}}></Button></Link>
+          <Link to="/account" className="account-button" style={{display:'none'}}><Button icon={<UserOutlined />}/></Link>
           <Link to="/cart" className="cart-button"><Button icon={<ShoppingCartOutlined/> }></Button></Link>
         </div>
       </header>
