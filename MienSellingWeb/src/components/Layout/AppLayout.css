@@ -43,7 +43,7 @@
   }
 
   .logo img {
-    height: 40px;
+    height: 100px;
   }
 
   .main-nav ul {
@@ -78,6 +78,7 @@
   .main-content {
     background-color: white;
   }
+
 
 
 
@@ -168,7 +169,7 @@
 }
 
 .footer-logo {
-  height: 35px; 
+  height: 100px; 
   margin-bottom: 15px; 
 }
 

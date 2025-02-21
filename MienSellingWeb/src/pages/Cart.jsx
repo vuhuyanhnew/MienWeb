@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Input, Button } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import './Cart.css';
@@ -7,6 +7,7 @@ import useCart from '../hooks/useCart';
 import EmptyCart from '../img/cart_banner_image.png';
 const Cart = () => {
   const { cart: cartItems, removeFromCart, updateQuantity, getTotal } = useCart();
+  const navigate = useNavigate(); 
   const [note, setNote] = useState('');
   const [needInvoice, setNeedInvoice] = useState(false);
   const [invoiceInfo, setInvoiceInfo] = useState({
@@ -19,7 +20,11 @@ const Cart = () => {
   const totalAmount = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
   const handleCheckout = () => {
-    // Xử lý thanh toán ở đây
+    if (note) {
+        localStorage.setItem('cartNote', note);
+      }
+  
+      navigate('/checkout');
     console.log('Proceeding to checkout...');
   };
 
@@ -149,6 +154,7 @@ const Cart = () => {
           <button 
             className="checkout-button"
             onClick={handleCheckout}
+            disabled={cartItems.length === 0}
           >
             THANH TOÁN
           </button>

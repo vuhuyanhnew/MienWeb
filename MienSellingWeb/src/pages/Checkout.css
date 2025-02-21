@@ -1,0 +1,220 @@
+.content {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .wrap {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 40%;
+    padding-right: 40px;
+  }
+  
+  .order-summary {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .order-summary h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .product-table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .product-thumbnail {
+    position: relative;
+    width: 60px;
+  }
+  
+  .product-thumbnail img {
+    width: 100%;
+    border-radius: 4px;
+  }
+  
+  .product-thumbnail-quantity {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #777;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  
+  .product-description-name {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  .product-description-variant {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  /* Main Content Styles */
+  .main {
+    width: 60%;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .main-header {
+    margin-bottom: 30px;
+  }
+  
+  .logo {
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  .breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .breadcrumb li:not(:last-child):after {
+    content: '/';
+    margin: 0 10px;
+    color: #666;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .section h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .field-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  /* Form Styles */
+  .ant-form-item {
+    margin-bottom: 15px;
+  }
+  
+  .ant-input {
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+  
+  /* Payment Method Styles */
+  .payment-method .ant-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .payment-method .ant-radio-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 0;
+  }
+  
+  .payment-method img {
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .bank-info {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 4px;
+  }
+  
+  /* Total Lines Styles */
+  .total-line-table {
+    width: 100%;
+  }
+  
+  .total-line td {
+    padding: 10px 0;
+  }
+  
+  .total-line td:last-child {
+    text-align: right;
+  }
+  
+  tfoot .total-line {
+    border-top: 1px solid #ddd;
+    font-weight: 500;
+  }
+  
+  /* Footer Styles */
+  .step-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .btn-checkout {
+    background: #338dbc;
+    color: white;
+    padding: 16px 30px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .btn-checkout:hover {
+    background: #2b7da6;
+  }
+  
+  .step-footer-previous-link {
+    color: #338dbc;
+    text-decoration: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .wrap {
+      flex-direction: column-reverse;
+    }
+  
+    .sidebar,
+    .main {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .sidebar {
+      margin-top: 20px;
+    }
+  
+    .field-group {
+      grid-template-columns: 1fr;
+    }
+  }

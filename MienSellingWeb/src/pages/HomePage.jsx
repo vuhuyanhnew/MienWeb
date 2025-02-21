@@ -68,6 +68,7 @@ function HomePage() {
       </Carousel>
 
       <div className="our-product-section" style={{ padding: '40px 20px' }}>
+        <h1 className="text-center text-3xl font-bold mb-4" style={{textAlign: 'center'}}>Sản phẩm của chúng tôi</h1>
        
         
         <div className="products-grid" style={{ 

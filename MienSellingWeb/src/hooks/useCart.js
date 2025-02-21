@@ -15,7 +15,13 @@ const useCart = () => {
     localStorage.setItem('cart', JSON.stringify(newCart));
     setCart(newCart);
   };
+  const getCartNote = () => {
+    return localStorage.getItem('cartNote') || '';
+  };
 
+  const clearCartNote = () => {
+    localStorage.removeItem('cartNote');
+  };
 const addToCart = (product) => {
     const existingItemIndex = cart.findIndex(item => item.id === product.id);
   
@@ -41,7 +47,10 @@ const addToCart = (product) => {
     );
     saveCart(newCart);
   };
-
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem('cart'); 
+  };
   const getTotal = () => {
     return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   };
@@ -51,7 +60,10 @@ const addToCart = (product) => {
     addToCart,
     removeFromCart,
     updateQuantity,
-    getTotal
+    getTotal,
+    getCartNote,
+    clearCartNote,
+    clearCart  
   };
 };
 

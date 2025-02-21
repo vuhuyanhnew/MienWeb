@@ -7,13 +7,14 @@ import payment1Img from '../../img/payment_1_img.png';
 import payment2Img from '../../img/payment_2_img.png';
 import shipment1Img from '../../img/shipment_1_img.png';
 import shipment2Img from '../../img/shipment_2_img.png';
+import logo from '../../img/test_logo.png';
 const Layout = () => {
   return (
     <div className="layout">
       <header className="main-header">
         <div className="logo">
           <Link to="/home">
-            <img src="/path-to-logo.svg" alt="Mien" />
+            <img src={logo} alt="Mien" />
           </Link>
         </div>
         
@@ -28,7 +29,7 @@ const Layout = () => {
         <div className="header-actions">
           <Link to="/search"><Button shape="circle" icon={<SearchOutlined />}></Button></Link>
           <Link to="/account" className="account-button"><Button icon={<UserOutlined />}/></Link>
-          <Link to="/cart" className="cart-button"><Button icon={<ShoppingCartOutlined/>}></Button></Link>
+          <Link to="/cart" className="cart-button"><Button icon={<ShoppingCartOutlined/> }></Button></Link>
         </div>
       </header>
 
@@ -40,7 +41,7 @@ const Layout = () => {
         <div className="footer-content">
           <div className="footer-brand">
             <Link to="/home">
-              <img src="/path-to-logo.svg" alt="Mien" className="footer-logo" />
+              <img src={logo} alt="Mien" className="footer-logo" />
             </Link>
             <h3 className="footer-title">
               Một sản phẩm sạch được làm ra cho tất cả mọi người
@@ -58,12 +59,11 @@ const Layout = () => {
             <a href="/" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
           </div>
 
-          <div className="footer-links">
+          {/* <div className="footer-links">
             <Link to="/sales-policy">Chính sách bán hàng</Link>
             <Link to="/return-policy">Chính sách đổi trả</Link>
             <Link to="/privacy-policy">Chính sách bảo mật</Link>
-            <Link to="/terms">Điều khoản dịch vụ</Link>
-          </div>
+          </div> */}
 
           <div className="footer-payment">
             <h4>Phương thức thanh toán</h4>
