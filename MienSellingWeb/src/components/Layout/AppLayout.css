@@ -248,3 +248,72 @@
 .bct-logo {
   height: 35px; 
 }
+
+/* AppLayout.css */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .main-nav {
+    display: none; /* Ẩn nav mặc định trên mobile */
+  }
+
+  .mobile-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: white;
+    z-index: 99;
+    padding: 60px 20px 20px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav.show {
+    left: 0;
+  }
+
+  .mobile-nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mobile-nav li {
+    margin: 0;
+  }
+
+  .mobile-nav a {
+    display: block;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  .mobile-menu-overlay {
+    display: block;
+  }
+}
+

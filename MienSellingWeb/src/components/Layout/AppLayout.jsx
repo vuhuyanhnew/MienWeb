@@ -2,12 +2,13 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import './AppLayout.css';
 import { Button } from 'antd';
-import { SearchOutlined, ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
+import { SearchOutlined, ShoppingCartOutlined, UserOutlined, MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import payment1Img from '../../img/payment_1_img.png';
 import payment2Img from '../../img/payment_2_img.png';
 import shipment1Img from '../../img/shipment_1_img.png';
 import shipment2Img from '../../img/shipment_2_img.png';
 import logo from '../../img/test_logo.png';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faFacebook, 
@@ -17,29 +18,40 @@ import {
   faTwitter 
 } from '@fortawesome/free-brands-svg-icons';
 const Layout = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
   return (
     <div className="layout">
-      <header className="main-header">
-        <div className="logo">
-          <Link to="/home">
-            <img src={logo} alt="Mien" />
-          </Link>
-        </div>
-        
-        <nav className="main-nav">
-          <ul>
-            <li><Link to="/home">Trang chủ</Link></li>
-            <li><Link to="/product">Sản Phẩm</Link></li>
-            <li><Link to="/contact">Liên hệ</Link></li>
-          </ul>
-        </nav>
-        
-        <div className="header-actions">
-          <Link to="/search"><Button shape="circle" icon={<SearchOutlined />} style={{display:'none'}}></Button></Link>
-          <Link to="/account" className="account-button" style={{display:'none'}}><Button icon={<UserOutlined />}/></Link>
-          <Link to="/cart" className="cart-button"><Button icon={<ShoppingCartOutlined/> }></Button></Link>
-        </div>
-      </header>
+<header className="main-header">
+  <div className="logo">
+    <Link to="/home">
+      <img src={logo} alt="Mien" />
+    </Link>
+  </div>
+
+  <button className="mobile-menu-btn" onClick={toggleMenu}>
+    {isMenuOpen ? <CloseOutlined /> : <MenuOutlined />}
+  </button>    
+
+  <nav className={`main-nav mobile-nav ${isMenuOpen ? 'show' : ''}`}>
+    <ul>
+      <li><Link to="/home" onClick={toggleMenu}>Trang chủ</Link></li>
+      <li><Link to="/product" onClick={toggleMenu}>Sản phẩm</Link></li>
+      <li><Link to="/contact" onClick={toggleMenu}>Liên hệ</Link></li>
+    </ul>
+  </nav>
+
+  {isMenuOpen && <div className="mobile-menu-overlay" onClick={toggleMenu} />}
+  
+  <div className="header-actions">
+    <Link to="/search"><Button shape="circle" icon={<SearchOutlined />} style={{display:'none'}}></Button></Link>
+    <Link to="/account" className="account-button" style={{display:'none'}}><Button icon={<UserOutlined />}/></Link>
+    <Link to="/cart" className="cart-button"><Button icon={<ShoppingCartOutlined/> }></Button></Link>
+  </div>
+</header>
 
       <main className="main-content">
         <Outlet />
