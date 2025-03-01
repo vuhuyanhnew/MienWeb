@@ -7,7 +7,7 @@ import payment1Img from '../../img/payment_1_img.png';
 import payment2Img from '../../img/payment_2_img.png';
 import shipment1Img from '../../img/shipment_1_img.png';
 import shipment2Img from '../../img/shipment_2_img.png';
-import logo from '../../img/test_logo.png';
+import logo from '../../img/logo.jpg';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -64,15 +64,14 @@ const Layout = () => {
               <img src={logo} alt="Mien" className="footer-logo" />
             </Link>
             <h3 className="footer-title">
-              Một sản phẩm sạch được làm ra cho tất cả mọi người
+            Miến dong Mường Phăng – Hương vị của núi rừng và bản làng
             </h3>
             <p className="footer-description">
-            Giữa bạt ngàn núi non Tây Bắc, Mường Phăng là mảnh đất màu mỡ với khí hậu trong lành, nơi cả dòng phát triển tự nhiên, không chịu tác động từ hóa chất hay can thiệp công nghiệp. Cây dong Mường Phăng mọc lên từ những vùng đất sạch và được nuôi dưỡng từ nguồn nước mát lành của núi rừng. Bởi vậy, mỗi sợi miến dong Mường Phăng không chỉ là một thực phẩm mà còn là một món quà từ thiên nhiên, chứa đựng tinh hoa đất trời, hoàn toàn phù hợp cho những ai hướng tới lối sống lành mạnh và chế độ ăn sạch
-            </p>
+            Giữa bạt ngàn núi non Tây Bắc, Mường Phăng là mảnh đất màu mỡ với khí hậu trong lành, nơi củ dong phát triển tự nhiên, không chịu tác động từ hóa chất hay can thiệp công nghiệp. Cây dong Mường Phăng mọc lên từ những vùng đất sạch và được nuôi dưỡng từ nguồn nước mát lành của núi rừng. Bởi vậy, mỗi sợi miến dong Mường Phăng không chỉ là một thực phẩm mà còn là một món quà từ thiên nhiên, chứa đựng tinh hoa đất trời, hoàn toàn phù hợp cho những ai hướng tới lối sống lành mạnh và chế độ ăn sạch. Mỗi sợi miến là một phần của câu chuyện về bản làng, về con người Mường Phăng và về cách sống hòa hợp với thiên nhiên. Với Miến dong Mường Phăng, bạn không chỉ ăn sạch mà còn cảm nhận được sự tinh khiết từ đất mẹ và tình yêu dành cho sức khỏe của chính mình            </p>
           </div>
 
           <div className="footer-social">
-          <a href="/" aria-label="Facebook">
+          {/* <a href="https://www.facebook.com/profile.php?id=61573456512593 " aria-label="Facebook">
           <FontAwesomeIcon icon={faFacebook} />
           </a>
           <a href="/" aria-label="Instagram">
@@ -86,7 +85,7 @@ const Layout = () => {
           </a>
           <a href="/" aria-label="Twitter">
           <FontAwesomeIcon icon={faTwitter} />
-          </a>
+          </a> */}
           </div>
           {/* <div className="footer-links">
             <Link to="/sales-policy">Chính sách bán hàng</Link>

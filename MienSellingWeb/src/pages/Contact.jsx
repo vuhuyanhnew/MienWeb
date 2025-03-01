@@ -53,8 +53,7 @@ const Contact = () => {
   return (
     <div className="contact-container">
       <div className="contact-wrapper">
-        <h2>Thông tin liên hệ</h2>
-
+        <h2>Thông tin liên hệ:</h2>
         <div className="info-table">
           <div className="info-row">
             <div className="info-cell">
@@ -62,18 +61,18 @@ const Contact = () => {
                 <EnvironmentOutlined className="info-icon" />
                 <div className="info-text">
                   <h3>Địa chỉ</h3>
-                  <p>Cụm 4 thôn 3, xã Thạch Hoà, huyện Thạch Thất, Hà Nội</p>
+                  <p>Thôn 3, xã Thạch Hoà, huyện Thạch Thất, Hà Nội</p>
                 </div>
               </div>
             </div>
             <div className="info-cell">
               <div className="info-cell-content">
-                <Link to="https://www.facebook.com/haidang.fnad" 
+                <Link to="https://www.facebook.com/profile.php?id=61573456512593" 
                 style={{ textDecoration: "none", color: "inherit" }}>
                 <FacebookOutlined className="info-icon" />
                 <div className="info-text">
                 </div>
-                <div>Mien Muong Phang</div>
+                <div>MƯỜNG PHĂNG FOOD</div>
                 </Link>
               </div>
             </div>
@@ -85,7 +84,7 @@ const Contact = () => {
                 <PhoneOutlined className="info-icon" />
                 <div className="info-text">
                   <h3>Điện thoại</h3>
-                  <p>0385030402</p>
+                  <p>0335505703</p>
                 </div>
               </div>
             </div>

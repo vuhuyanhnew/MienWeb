@@ -1,36 +1,41 @@
-import React, { useState } from 'react';
-import { Button, Rate, InputNumber } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { Button, InputNumber, message } from 'antd';
 import { ZoomInOutlined } from '@ant-design/icons';
 import './ProductDetail.css';
 import productImage from '../img/Product_img_1.png';
 import useCart from '../hooks/useCart';
+import { useParams, useLocation, useNavigate} from 'react-router-dom';
 
 function ProductDetail() {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
-
-  // Định nghĩa thông tin sản phẩm cố định
-  const product = {
-    id: "mien-muong-phang-01", // ID duy nhất cho sản phẩm
-    name: "Mien Muong Phang",
-    price: 100000,
-    image: productImage,
-    variant: "Default",
-    slug: "mien-muong-phang"
-  };
+  const [product, setProduct] = useState(null);
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const location = useLocation();
+  
+  useEffect(() => {
+    if (location.state && location.state.product) {
+      setProduct(location.state.product);
+    } else {
+      navigate('/product');
+    }
+  }, [id, location.state]);
 
   const handleAddToCart = () => {
     try {
+      if (!product) return;
+      
       const productToAdd = {
         ...product,
         quantity: quantity  
       };
       
       addToCart(productToAdd);
-      alert("Đã thêm sản phẩm vào giỏ hàng!");
+      message.success("Đã thêm sản phẩm vào giỏ hàng!");
     } catch (error) {
       console.error("Lỗi khi thêm vào giỏ hàng:", error);
-      alert("Có lỗi xảy ra khi thêm vào giỏ hàng!");
+      message.error("Có lỗi xảy ra khi thêm vào giỏ hàng!");
     }
   };
 
@@ -38,12 +43,17 @@ function ProductDetail() {
     setQuantity(value);
   };
 
+  // Hiển thị loading nếu chưa có dữ liệu sản phẩm
+  if (!product) {
+    return <div className="loading">Đang tải thông tin sản phẩm...</div>;
+  }
+
   return (
     <div className="product-detail-container">
       <div className="product-detail-wrapper">
         <div className="product-image">
           <div className="image-wrapper">
-            <img src={productImage} alt={product.name} />
+            <img src={product.image} alt={product.name} />
             <button className="zoom-button">
               <ZoomInOutlined />
             </button>
@@ -59,11 +69,18 @@ function ProductDetail() {
           </div>
 
           <div className="product-description">
-            <p>
-              Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, 
-              consectetur adipisci velit, sed quia non incidunt lores ta porro ame. 
-              numquam eius modi tempora incidunt lores ta porro ame.
-            </p>
+            {product.description ? (
+              <p>{product.description}</p>
+            ) : (
+              <p>Chưa có mô tả cho sản phẩm này.</p>
+            )}
+          </div>
+          
+          <div className="product-specifications">
+            <p><strong>Khối lượng</strong>: {product.id === 1 ? '250g' : '500g'}</p>
+            <p><strong>Hạn sử dụng</strong>: 1 năm từ ngày sản xuất</p>
+            <p><strong>Bảo quản</strong>: Nơi khô ráo, thoáng mát</p>
+            <p><strong>Cách dùng</strong>: Ngâm 5-10 phút, nấu 1-2 phút hoặc xào 3-5 phút</p>
           </div>
 
           <div className="product-actions">
@@ -77,32 +94,28 @@ function ProductDetail() {
               className="add-to-cart-btn" 
               onClick={handleAddToCart}
             >
-              ADD TO CART
+              THÊM VÀO GIỎ HÀNG
             </Button>
           </div>
 
           <div className="product-meta">
             <div className="categories">
-              Categories:<div>Food</div>
+              Danh mục: <span>{product.category}</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Product Tabs */}
-      <div className="product-tabs">
+      {/* <div className="product-tabs">
         <div className="tabs-header">
-          <button className="tab active">Description</button>
-          <button className="tab">Reviews (0)</button>
+          <button className="tab active">Mô tả</button>
+          <button className="tab">Đánh giá (0)</button>
         </div>
         <div className="tab-content">
-          <p>
-            Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, 
-            consectetur adipisci velit, sed quia non incidunt lores ta porro ame. 
-            numquam eius modi tempora incidunt lores ta porro ame.
-          </p>
+          <p>{product.description || "Chưa có mô tả chi tiết cho sản phẩm này."}</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
