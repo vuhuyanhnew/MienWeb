@@ -25,7 +25,7 @@ function HomePage() {
             id: 1,
             name: "Miến Dong 250g",
             category: "Đồ khô",
-            price: 40000,
+            price: 35000,
             image: coffee,
             description: "Miến dong 250g được làm từ 100% tinh bột củ dong riềng trồng tự nhiên tại vùng đất màu mỡ Tây Bắc, không hóa chất, không chất bảo quản. Sợi miến dai ngon, không bị nhão, mang đến hương vị chuẩn mực và giàu dinh dưỡng.",
         },
