@@ -93,7 +93,7 @@ const Contact = () => {
                 <MailOutlined className="info-icon" />
                 <div className="info-text">
                   <h3>Email</h3>
-                  <p>vuhuyanhnew@gmail.com</p>
+                  <p>mienmuongphang@gmail.com</p>
                 </div>
               </div>
             </div>
